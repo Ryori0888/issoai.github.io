@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chainsaw Man RPG | Caçando Demônios Nunca Foi Tão Sangrento</title>
+    <style>
+        :root {
+            --blood-red: #c00000;
+            --dark-gray: #222222;
+            --light-gray: #f0f0f0;
+            --gold: #ffd700;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-gray);
+            color: var(--light-gray);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: black;
+            padding: 1rem;
+            border-bottom: 3px solid var(--blood-red);
+            text-align: center;
+        }
+        
+        h1 {
+            color: var(--blood-red);
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .subtitle {
+            color: var(--gold);
+            font-style: italic;
+        }
+        
+        nav {
+            background-color: black;
+            padding: 0.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--blood-red);
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: var(--blood-red);
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        .section {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-left: 4px solid var(--blood-red);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        h2 {
+            color: var(--blood-red);
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+        
+        h3 {
+            color: var(--gold);
+            margin-top: 1.5rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid var(--blood-red);
+        }
+        
+        th {
+            background-color: var(--blood-red);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: rgba(255, 0, 0, 0.1);
+        }
+        
+        .warning {
+            background-color: rgba(192, 0, 0, 0.2);
+            padding: 1rem;
+            border-left: 4px solid var(--blood-red);
+            margin: 1rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .highlight {
+            background-color: rgba(255, 215, 0, 0.1);
+            padding: 1rem;
+            border-left: 4px solid var(--gold);
+            margin: 1rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            border-top: 3px solid var(--blood-red);
+        }
+        
+        .two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .two-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CHAINSAW MAN RPG</h1>
+        <p class="subtitle">"Vire um Caçador de Demônios e Enfrente o Inferno!"</p>
+    </header>
+    
+    <nav>
+        <a href="#introducao">Introdução</a>
+        <a href="#criacao">Criação</a>
+        <a href="#classes">Classes</a>
+        <a href="#niveis">Níveis</a>
+        <a href="#sistema">Sistema</a>
+        <a href="#demonios">Demônios</a>
+        <a href="#armas">Armas</a>
+        <a href="#mestre">Mestre</a>
+    </nav>
+    
+    <div class="container">
+        <section id="introducao" class="section">
+            <h2>Introdução</h2>
+            <p>Bem-vindo ao mundo de <strong>Chainsaw Man RPG</strong>, um jogo de interpretação de personagens baseado no universo sombrio e violento do mangá <em>Chainsaw Man</em>. Neste jogo, você e seus amigos assumirão os papéis de <strong>Caçadores de Demônios</strong>, humanos que fazem contratos com demônios para obter poderes e combater ameaças sobrenaturais.</p>
+            
+            <div class="highlight">
+                <p>"A vida é curta. Mate demônios, faça contratos e talvez... você sobreviva."</p>
+            </div>
+        </section>
+        
+        <section id="criacao" class="section">
+            <h2>Criação de Personagem</h2>
+            <p>Transforme-se em um Caçador de Demônios com habilidades únicas e um contrato perigoso.</p>
+            
+            <h3>Atributos</h3>
+            <p>Distribua 12 pontos entre (mínimo 1, máximo 4 em cada):</p>
+            <ul>
+                <li><strong>FOR</strong> (Força): Poder físico e combate corpo a corpo</li>
+                <li><strong>AGI</strong> (Agilidade): Velocidade, reflexos e destreza</li>
+                <li><strong>VIG</strong> (Vigor): Resistência física e saúde</li>
+                <li><strong>INT</strong> (Intelecto): Conhecimento e percepção</li>
+                <li><strong>PRE</strong> (Presença): Carisma e força de vontade</li>
+                <li><strong>SOR</strong> (Sorte): Bênção ou maldição do destino</li>
+            </ul>
+            
+            <h3>Origens</h3>
+            <table>
+                <tr>
+                    <th>Origem</th>
+                    <th>Bônus</th>
+                    <th>Descrição</th>
+                </tr>
+                <tr>
+                    <td>Sobrevivente das Ruas</td>
+                    <td>+1 AGI, +1 VIG</td>
+                    <td>Cresceu na miséria, mas aprendeu a lutar</td>
+                </tr>
+                <tr>
+                    <td>Ex-Membro da Yakuza</td>
+                    <td>+1 FOR, +1 PRE</td>
+                    <td>Já fez parte do submundo do crime</td>
+                </tr>
+                <tr>
+                    <td>Estudante com Dívida</td>
+                    <td>+1 INT, +1 SOR</td>
+                    <td>Vida normal arruinada por um contrato demoníaco</td>
+                </tr>
+                <tr>
+                    <td>Ex-Caçador de Demônios</td>
+                    <td>+1 em qualquer atributo</td>
+                    <td>Já trabalhou para o governo antes</td>
+                </tr>
+            </table>
+            
+            <h3>Contratos Demoníacos</h3>
+            <table>
+                <tr>
+                    <th>Demônio</th>
+                    <th>Poder</th>
+                    <th>Risco</th>
+                </tr>
+                <tr>
+                    <td>Demônio do Machado</td>
+                    <td>Materializa machados em suas mãos (+2 FOR em ataques)</td>
+                    <td>Odeia ser ignorado</td>
+                </tr>
+                <tr>
+                    <td>Demônio da Cobra</td>
+                    <td>Braços se transformam em cobras que podem estrangular</td>
+                    <td>Pode virar contra aliados</td>
+                </tr>
+                <tr>
+                    <td>Demônio do Fantasma</td>
+                    <td>Pode ficar invisível por curtos períodos</td>
+                    <td>Fica mais fraco na luz</td>
+                </tr>
+                <tr>
+                    <td>Demônio do Fogo</td>
+                    <td>Manipula chamas</td>
+                    <td>Sofre dano se usar demais</td>
+                </tr>
+                <tr>
+                    <td>Demônio do Sangue</td>
+                    <td>Cura feridas bebendo sangue</td>
+                    <td>Fica mais violento</td>
+                </tr>
+                <tr>
+                    <td>Demônio da Corrente</td>
+                    <td>Cria correntes para prender ou atacar</td>
+                    <td>Pode prender aliados acidentalmente</td>
+                </tr>
+            </table>
+            
+            <h3>Equipamento Inicial</h3>
+            <ul>
+                <li>Uma <strong>arma simples</strong> (faca, pistola, porrete)</li>
+                <li>Um <strong>item pessoal</strong> (foto de alguém, cigarro, diário)</li>
+                <li><strong>Uniforme da Divisão de Segurança Pública</strong> (se aliado ao governo)</li>
+            </ul>
+        </section>
+        
+        <section id="classes" class="section">
+            <h2>Classes de Caçadores</h2>
+            <p>Escolha seu estilo de combate:</p>
+            
+            <h3>Atirador (Precisão à Distância)</h3>
+            <p>"Não importa o quão rápido você seja, minha bala é mais rápida."</p>
+            <ul>
+                <li><strong>Mira Afiada</strong>: +2 em testes de AGI ao atacar à distância</li>
+                <li><strong>Recarga Rápida</strong>: Pode atirar duas vezes por turno (segunda rolagem com -1)</li>
+                <li><strong>Tiro Certeiro (1x/sessão)</strong>: Ataque automático causa 3 ferimentos</li>
+            </ul>
+            
+            <h3>Lutador (Combate Desarmado)</h3>
+            <p>"Minhas mãos são minhas armas, e elas nunca falham."</p>
+            <ul>
+                <li><strong>Chão é Lava</strong>: +1 em esquivas (AGI) e pode contra-atacar ao defender</li>
+                <li><strong>Soco de Aço</strong>: Ataques desarmados causam 2 ferimentos</li>
+                <li><strong>Fúria Incontrolável (1x/sessão)</strong>: Ataca todos inimigos adjacentes</li>
+            </ul>
+            
+            <h3>Guerreiro (Mestre em Armas Brancas)</h3>
+            <p>"Uma lâmina bem afiada corta até o medo."</p>
+            <ul>
+                <li><strong>Especialista em Armas</strong>: +2 em testes de FOR com armas brancas</li>
+                <li><strong>Golpe Devastador</strong>: Uma vez por combate, dobra o dano</li>
+                <li><strong>Postura de Batalha</strong>: Bloqueia um ataque por turno sem rolagem</li>
+            </ul>
+            
+            <div class="highlight">
+                <h3>Regra Opcional: Multiclasse</h3>
+                <p>Pode trocar uma habilidade inicial por uma de outra classe, mas terá <strong>-1 em testes relacionados</strong> até treinar adequadamente.</p>
+                <p><em>Exemplo: Um Lutador pode pegar "Mira Afiada" do Atirador, mas sofre -1 em ataques à distância.</em></p>
+            </div>
+        </section>
+        
+        <section id="niveis" class="section">
+            <h2>Sistema de Níveis (1-80)</h2>
+            <p>Evolua enfrentando demônios e completando missões perigosas.</p>
+            
+            <table>
+                <tr>
+                    <th>Nível</th>
+                    <th>Bônus</th>
+                    <th>Habilidade</th>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>+1 atributo</td>
+                    <td>Habilidade de Classe I</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>+1 atributo</td>
+                    <td>Aprimoramento de Contrato</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>+1 atributo</td>
+                    <td>Habilidade de Classe II</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>+1 atributo</td>
+                    <td>Evolução de Demônio</td>
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>+2 atributos</td>
+                    <td>Habilidade de Classe III</td>
+                </tr>
+                <tr>
+                    <td>30</td>
+                    <td>+1 atributo</td>
+                    <td>Aprimoramento de Contrato</td>
+                </tr>
+                <tr>
+                    <td>40</td>
+                    <td>+1 atributo</td>
+                    <td>Transformação Híbrida</td>
+                </tr>
+                <tr>
+                    <td>60</td>
+                    <td>+1 atributo</td>
+                    <td>Evolução Final do Demônio</td>
+                </tr>
+                <tr>
+                    <td>80</td>
+                    <td>+2 em todos</td>
+                    <td>Forma Lendária</td>
+                </tr>
+            </table>
+            
+            <h3>Habilidades por Classe</h3>
+            <div class="two-columns">
+                <div>
+                    <h4>Atirador</h4>
+                    <ul>
+                        <li><strong>Nível 5</strong>: Precisão Letal (ignora cobertura)</li>
+                        <li><strong>Nível 15</strong>: Rajada de Tiros (3 ataques com -2)</li>
+                        <li><strong>Nível 25</strong>: Tiro de Misericórdia (executa inimigos fracos)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Lutador</h4>
+                    <ul>
+                        <li><strong>Nível 5</strong>: Contra-Ataque Perfeito (dano = nível)</li>
+                        <li><strong>Nível 15</strong>: Fúria Ininterrupta (2 ataques sem penalidade)</li>
+                        <li><strong>Nível 25</strong>: Morte por Mil Golpes (dano acumulativo)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Guerreiro</h4>
+                    <ul>
+                        <li><strong>Nível 5</strong>: Corte Aniquilador (decepa membros)</li>
+                        <li><strong>Nível 15</strong>: Postura Impenetrável (bloqueio automático)</li>
+                        <li><strong>Nível 25</strong>: Dança da Lâmina (ataque em área)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="sistema" class="section">
+            <h2>Sistema de Jogo</h2>
+            
+            <h3>Testes de Habilidade</h3>
+            <p>Role <strong>1D6 + Atributo</strong>:</p>
+            <ul>
+                <li><strong>6+</strong>: Sucesso total</li>
+                <li><strong>4-5</strong>: Sucesso parcial (com consequência)</li>
+                <li><strong>1-3</strong>: Falha (algo ruim acontece)</li>
+            </ul>
+            
+            <h3>Combate</h3>
+            <ol>
+                <li><strong>Iniciativa</strong>: 1D6 + AGI</li>
+                <li><strong>Ataque</strong>: 1D6 + FOR (corpo a corpo) ou AGI (distância)</li>
+                <li><strong>Dano</strong>: Ataques básicos = 1 ferimento, armas +1</li>
+                <li><strong>Defesa</strong>: 1D6 + AGI (esquiva) ou VIG (resistir)</li>
+            </ol>
+            
+            <h3>Ferimentos e Morte</h3>
+            <ul>
+                <li><strong>0-2</strong>: Saudável</li>
+                <li><strong>3</strong>: Ferido grave (-1 em todos os testes)</li>
+                <li><strong>5</strong>: Morrendo (role SOR para sobreviver)</li>
+            </ul>
+        </section>
+        
+        <section id="demonios" class="section">
+            <h2>Catálogo de Demônios</h2>
+            
+            <h3>Demônios Comuns (Nível 1-20)</h3>
+            <table>
+                <tr>
+                    <th>Demônio</th>
+                    <th>Poder</th>
+                    <th>Nível</th>
+                </tr>
+                <tr>
+                    <td>Demônio do Machado</td>
+                    <td>Materializa machados</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>Demônio do Sangue</td>
+                    <td>Cura bebendo sangue</td>
+                    <td>15</td>
+                </tr>
+                <tr>
+                    <td>Demônio da Corrente</td>
+                    <td>Cria correntes de ataque</td>
+                    <td>7</td>
+                </tr>
+            </table>
+            
+            <h3>Demônios de Medo (Nível 21-50)</h3>
+            <table>
+                <tr>
+                    <th>Demônio</th>
+                    <th>Poder</th>
+                    <th>Nível</th>
+                </tr>
+                <tr>
+                    <td>Demônio do Escuro</td>
+                    <td>Absorve luz e energia</td>
+                    <td>25</td>
+                </tr>
+                <tr>
+                    <td>Demônio da Fome</td>
+                    <td>Devora tudo</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>Demônio do Trauma</td>
+                    <td>Manipula memórias</td>
+                    <td>40</td>
+                </tr>
+            </table>
+            
+            <h3>Demônios Lendários (Nível 51-80)</h3>
+            <table>
+                <tr>
+                    <th>Demônio</th>
+                    <th>Poder</th>
+                    <th>Nível</th>
+                </tr>
+                <tr>
+                    <td>Demônio do Inferno</td>
+                    <td>Invoca chamas do submundo</td>
+                    <td>60</td>
+                </tr>
+                <tr>
+                    <td>Demônio do Medo</td>
+                    <td>Personifica o medo puro</td>
+                    <td>80</td>
+                </tr>
+                <tr>
+                    <td>Demônio da Morte</td>
+                    <td>Mata com um toque</td>
+                    <td>75</td>
+                </tr>
+            </table>
+            
+            <div class="warning">
+                <h3>Demônios Especiais (NPCs/Chefes)</h3>
+                <ul>
+                    <li><strong>Pochita</strong>: Corta conceitos da realidade</li>
+                    <li><strong>Demônio do Controle (Makima)</strong>: Manipula vidas</li>
+                    <li><strong>Demônio da Guerra (Reze)</strong>: Fusão com armas</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="armas" class="section">
+            <h2>Arsenal de Armas</h2>
+            
+            <h3>Armas Brancas</h3>
+            <table>
+                <tr>
+                    <th>Arma</th>
+                    <th>Dano</th>
+                    <th>Efeito</th>
+                </tr>
+                <tr>
+                    <td>Facão</td>
+                    <td>1</td>
+                    <td>+1 AGI no primeiro ataque</td>
+                </tr>
+                <tr>
+                    <td>Machado de Caçador</td>
+                    <td>2</td>
+                    <td>-1 AGI no próximo turno</td>
+                </tr>
+                <tr>
+                    <td>Soco Inglês</td>
+                    <td>1 (2 para Lutadores)</td>
+                    <td>Atordoa em crítico</td>
+                </tr>
+                <tr>
+                    <td>Lâminas Duplas</td>
+                    <td>1 (x2)</td>
+                    <td>-1 em cada ataque</td>
+                </tr>
+            </table>
+            
+            <h3>Armas de Fogo</h3>
+            <table>
+                <tr>
+                    <th>Arma</th>
+                    <th>Dano</th>
+                    <th>Efeito</th>
+                </tr>
+                <tr>
+                    <td>Pistola 9mm</td>
+                    <td>1</td>
+                    <td>Recarga Rápida (2 tiros/turno)</td>
+                </tr>
+                <tr>
+                    <td>Escopeta</td>
+                    <td>2 (curta distância)</td>
+                    <td>Ataque em cone</td>
+                </tr>
+                <tr>
+                    <td>Rifle de Precisão</td>
+                    <td>2</td>
+                    <td>Ignora cobertura se imóvel</td>
+                </tr>
+            </table>
+            
+            <h3>Regras para Soco Inglês</h3>
+            <ul>
+                <li>Lutadores causam <strong>2 ferimentos</strong></li>
+                <li>Crítico (rolagem 6): Inimigo perde próximo turno</li>
+                <li>Combina com <strong>Fúria Incontrolável</strong></li>
+            </ul>
+        </section>
+        
+        <section id="mestre" class="section">
+            <h2>Guia do Mestre</h2>
+            
+            <div class="warning">
+                <p>🔪 <strong>Atenção, Mestre!</strong> Seu trabalho é criar um equilíbrio entre ação, horror e drama.</p>
+            </div>
+            
+            <h3>Dicas para Campanhas</h3>
+            <ul>
+                <li><strong>Sobrevivência Horror</strong>: Recursos limitados e dilemas morais</li>
+                <li><strong>Ação Over-the-Top</strong>: Combates exagerados como no mangá</li>
+                <li><strong>Intriga Política</strong>: Conflitos entre Divisão, caçadores e demônios</li>
+            </ul>
+            
+            <h3>Balanceamento</h3>
+            <table>
+                <tr>
+                    <th>Nível Party</th>
+                    <th>Ameaça Adequada</th>
+                </tr>
+                <tr>
+                    <td>1-10</td>
+                    <td>Demônios comuns (zumbis, bestas)</td>
+                </tr>
+                <tr>
+                    <td>11-30</td>
+                    <td>Demônios de medo específico</td>
+                </tr>
+                <tr>
+                    <td>31-50</td>
+                    <td>Híbridos e demônios territoriais</td>
+                </tr>
+                <tr>
+                    <td>51+</td>
+                    <td>Ameaças apocalípticas</td>
+                </tr>
+            </table>
+            
+            <h3>Eventos Aleatórios (1d6)</h3>
+            <ol>
+                <li>Um caçador rival aparece</li>
+                <li>Demônio menor pede ajuda</li>
+                <li>Divisão ordena missão urgente</li>
+                <li>Contrato ativado acidentalmente</li>
+                <li>NPC trai o grupo</li>
+                <li><strong>Pochita aparece</strong> (causa caos)</li>
+            </ol>
+            
+            <h3>Regras Opcionais</h3>
+            <ul>
+                <li><strong>Insanidade</strong>: Falhas críticas acumulam Stress (5 = colapso)</li>
+                <li><strong>Mortes Heroicas</strong>: Personagem pode voltar como demônio ou deixar legado</li>
+                <li><strong>Evolução de Inimigos</strong>: Demônios aprendem com os jogadores</li>
+            </ul>
+        </section>
+    </div>
+    
+    <footer>
+        <p>Chainsaw Man RPG © 2023 - Um jogo não oficial baseado na obra de Tatsuki Fujimoto</p>
+        <p>Desenvolvido para fãs, por fãs</p>
+    </footer>
+</body>
+</html>
